@@ -1,4 +1,4 @@
-/**
+ /**
  * Lab 6 - Basic Motion
  * Change a variable in each frame of draw() to make an image move
  */
@@ -22,10 +22,15 @@ function draw() {
   
   ufo(x, y, d, r); // call the ufo() function (see below)
   
-  // add code here to change the ship location each frame
+  // Update the x position of the UFO
+  x += 1; // Adjust this value to control the speed of movement
   
-  
+  // Wrap the UFO 
+  if (x > width + d/2) {
+    x = -d/2; 
+  }
 }
+
 
 function ufo(tempX, tempY, tempD, tempR){
   // this custom function takes care of drawing a complex shape
